@@ -14,7 +14,7 @@ const navLinks = [
     ]
 const Navbar = () => {
   return (
-    <div className =  " fixed w-full flex justify-between bg-white p-4 text-black border-b shadow-xl ">
+    <div className =  " absolute top-0 z-50 fixed w-full flex justify-between bg-white p-4 text-black border-b shadow-xl ">
         <div className = "flex space-x-5 ">{navLinks.map((link,index)=>(
             <p className= "hover:font-semibold cursor-pointer" 
             key={index}>{link.text}</p>
