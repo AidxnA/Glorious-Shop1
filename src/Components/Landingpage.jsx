@@ -15,11 +15,12 @@ const Landingpage = () => {
             NOW AVAILABLE IN THE US! 2-zone RGB Lighting. Zero-edge irritation. <br />
             And the best part? This mouse pad's surface is smoother than your aim on a good day.
           </p>
-          <button className="rounded-full w-[200px] bg-white px-9 py-4 text-black items-start font-semibold hover:bg-white transition shadow-lg ml-20 mb-20">
+          <button className="rounded-full w-[200px] bg-white px-9 py-4 text-black items-start font-semibold hover:bg-white transition shadow-lg ml-20 mb-20 ">
             Shop Now
           </button>
         </div>
       </div>
+      
     )
 }
 
