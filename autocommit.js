@@ -44,7 +44,7 @@ async function commitAndPush() {
     const authedUrl = originUrl.trim().replace("https://github.com/", `https://${token}@github.com/`);
     
     // Push changes using the authenticated URL
-    await runCommand(`git push ${authedUrl} main`);
+    await runCommand(`git push ${authedUrl} Glorious-Shop1`);
     
     console.log("✅ Firebase files committed and pushed!");
   } catch (err) {
