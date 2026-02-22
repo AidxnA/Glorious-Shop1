@@ -9,11 +9,12 @@ const Shop = () => {
     useEffect(() => {
         const getProducts = async () => {
             const data = await fetchFeaturedProducts()
-            console.log('Fetched data:', data.items) // Log here to see what's returned
+            console.log('Fetched data:', data.items) // Log here to see what's returned 
             setProducts(data.items)
         }
         getProducts()
     }, [])
+    
     
     // Separate useEffect to log products when they change
     useEffect(() => {
@@ -23,7 +24,7 @@ const Shop = () => {
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {products && products.map(product => (
-                <ProductCard key={product.id} product={product} />
+                <ProductCard key={product.fields.slug} product={product.fields} />
             ))}
         </div>
     );

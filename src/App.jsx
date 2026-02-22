@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router";
 import ProductGuide from './Components/ProductGuide';
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import Shop from "./Components/Shop"; 
+import Shop1 from "./Components/Shop1"
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/Product/:slug" element={<ProductGuide />}></Route>
         <Route path="/shop" element={<Shop />} />
+        <Route path="/shopAI" element={<Shop1 />} />
 
       </Routes>
     </div>
