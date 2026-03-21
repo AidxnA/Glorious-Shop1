@@ -3,28 +3,31 @@ import Logo from './Logo'
 import Iconsymbols from './Iconsymbols'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react';
 import { Link } from "react-router-dom";
+import useCartStore from '../../Context/Statecontext';
 
 
 const navLinks = [
-  {id : 1, text : 'Shop', link: '/shop'},
-  {id : 2, text : 'Build', link: '/build'},
-  {id : 3, text : 'Sale', link: '/sale'},
-  {id : 4, text : 'Explore', link: '/explore'},
-  {id : 5, text : 'Software', link: '/software'},
-  {id : 6, text : 'Support', link: '/support'},
+  { id: 1, text: 'Shop', link: '/shop' },
+  { id: 2, text: 'Build', link: '/build' },
+  { id: 3, text: 'Sale', link: '/sale' },
+  { id: 4, text: 'Explore', link: '/explore' },
+  { id: 5, text: 'Software', link: '/software' },
+  { id: 6, text: 'Support', link: '/support' },
 ]
 
 const Navbar = () => {
+  const cart = useCartStore((s) => s.cart);
+  const quantity = cart.reduce((sum, item) => sum + item.quantity, 0);
   return (
-    <div className =  " absolute top-0 z-50 fixed w-full flex justify-between bg-white p-4 text-black border-b shadow-xl ">
-        <div className = "flex space-x-5 ">{navLinks.map((link,index)=>(
-            <p className= "hover:font-semibold cursor-pointer" 
-            key={index}>{link.text}</p>
-        ))}
-        </div> {/*This is for my Nav links */}
-        <div ><Logo/></div> {/*This is for my Logo */}
-        <div><Iconsymbols/></div> {/*This is for my Icon actions */}
-        
+    <div className=" absolute top-0 z-50 fixed w-full flex justify-between bg-white p-4 text-black border-b shadow-xl ">
+      <div className="flex space-x-5 ">{navLinks.map((link, index) => (
+        <p className="hover:font-semibold cursor-pointer"
+          key={index}>{link.text}</p>
+      ))}
+      </div> {/*This is for my Nav links */}
+      <div ><Logo /></div> {/*This is for my Logo */}
+      <div><Iconsymbols /></div> {/*This is for my Icon actions */}
+      <p>{quantity}</p>   {/* Quantity of products in cart */}
                 <SignedIn>
           <UserButton />
         </SignedIn>
