@@ -1,3 +1,4 @@
+//Shopping Cart System
 import { useUser } from '@clerk/clerk-react'
 import { Button } from "../../Components/ui/button"
 import { IoCartOutline } from "react-icons/io5"
